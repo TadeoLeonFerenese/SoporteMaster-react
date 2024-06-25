@@ -5,7 +5,7 @@ export const Banner = () => {
         <img
           src={"src/images/BannerPjn.jpg"}
           alt="Banner Immage"
-          className="img-fluid w-100  p-0"
+          className="img-fluid  p-0"
         />
       </div>
     </div>
