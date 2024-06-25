@@ -1,5 +1,8 @@
 import { Banner, Navbar } from "../components";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { HomePage } from "../pages";
+// import { Routes, Route } from "react-router-dom";
+
 // import { SoporteMasterApp } from "../SoporteMasterApp";
 
 export const SMroutes = () => {
@@ -16,8 +19,10 @@ export const SMroutes = () => {
         </Routes>
       </div>
       {/* aca va el footer  */}
-
       <div className="container"></div>
+      <div className="d-flex justify-content-center align-items-center my-5 ">
+        <HomePage />
+      </div>
     </>
   );
 };
