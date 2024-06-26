@@ -5,24 +5,27 @@ export const HomePage = () => {
     <div className="  container ">
       <div className="row my-4">
         <div className="col-md-4">
-          <Card imageName="otros.png" title="Card 1" />
+          <Card imageName="iconoWindows.png" title="Imagenes Master" />
         </div>
         <div className="col-md-4">
-          <Card imageName="tutosydocs.png" title="Card Title" />
+          <Card imageName="drivers.png" title="Drivers" />
         </div>
         <div className="col-md-4">
-          <Card imageimageNameSrc="otros.png" title="Card Title" />
+          <Card
+            imageName="iconopendrivemaster.png"
+            title="Pendrive Masterizado"
+          />
         </div>
       </div>
       <div className="row my-4">
         <div className="col-md-4">
-          <Card imageName="some-image.png" title="Card Title" />
+          <Card imageName="iconoSoftware.png" title="Software" />
         </div>
         <div className="col-md-4">
-          <Card imageName="some-image.png" title="Card Title" />
+          <Card imageName="erroresrepair.png" title="Reparción de Errores" />
         </div>
         <div className="col-md-4">
-          <Card imageName="some-image.png" title="Card Title" />
+          <Card imageName="utilidades.png" title="Utilidades" />
         </div>
       </div>
     </div>
