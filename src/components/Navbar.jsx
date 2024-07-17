@@ -2,7 +2,10 @@ import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark p-2  fixed-top bg-light">
+    <nav
+      className="navbar navbar-expand-sm navbar-dark p-2  fixed-top bg-light"
+      style={{ boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)" }}
+    >
       <div className="navbar-collapse">
         <div className="navbar-nav ">
           <NavLink

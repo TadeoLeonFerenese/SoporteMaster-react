@@ -1,33 +1,34 @@
 import { Card } from "../components";
 
 export const HomePage = () => {
+  //! Funcione que desglosa el contenido de las cards
+  const items = [
+    { title: "Imagenes Master", img: "iconoWindows.png" },
+    { title: "Drivers", img: "drivers.png" },
+    { title: "Pendrive Masterizado", img: "iconopendrivemaster.png" },
+    { title: "Software", img: "iconoSoftware.png" },
+    { title: "Reparción de Errores", img: "erroresrepair.png" },
+    { title: "Utilidades", img: "utilidades.png" },
+  ];
   return (
-    <div className="  container ">
-      <div className="row my-4">
-        <div className="col-md-4">
-          <Card imageName="iconoWindows.png" title="Imagenes Master" />
-        </div>
-        <div className="col-md-4">
-          <Card imageName="drivers.png" title="Drivers" />
-        </div>
-        <div className="col-md-4">
-          <Card
-            imageName="iconopendrivemaster.png"
-            title="Pendrive Masterizado"
-          />
-        </div>
-      </div>
-      <div className="row my-4">
-        <div className="col-md-4">
-          <Card imageName="iconoSoftware.png" title="Software" />
-        </div>
-        <div className="col-md-4">
-          <Card imageName="erroresrepair.png" title="Reparción de Errores" />
-        </div>
-        <div className="col-md-4">
-          <Card imageName="utilidades.png" title="Utilidades" />
-        </div>
-      </div>
+    <div
+      className="container"
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "60px",
+        width: "100%",
+        maxWidth: "1360px",
+        justifyContent: "center",
+        margin: "0 auto",
+        height: "100%",
+      }}
+    >
+      {" "}
+      {items.map((item, index) => (
+        //!aca con el map itineramos lo que se degloso antes
+        <Card key={index} imageName={item.img} title={item.title} />
+      ))}
     </div>
   );
 };
