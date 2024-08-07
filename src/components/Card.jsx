@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
+import "../Styles/Card.css";
 
 export const Card = ({ imageName, title }) => {
   const imagePath = (imageName) => {
     return `src/images/${imageName}`;
   };
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card">
       <img
         src={imagePath(imageName)}
         className="card-img-top p-5"
-        style={{ backgroundColor: "rgb(38 67 195)" }}
         alt={title}
       />
       <div className="card-body">

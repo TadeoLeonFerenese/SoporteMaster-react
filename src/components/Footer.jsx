@@ -1,21 +1,10 @@
+import "../Styles/Footer.css";
+
 export const Footer = () => {
   return (
-    <div
-      className="footer w-100"
-      style={{
-        backgroundColor: "rgb(38 67 195)",
-      }}
-    >
-      <div
-        className="d-flex justify-content-center w-100 align-items-center gap-3"
-        style={{
-          height: "250px",
-          maxWidth: "1360px",
-          width: "100%",
-          margin: "auto",
-        }}
-      >
-        <div className="text-center  m-0 p-0" style={{ flex: "1" }}>
+    <div className="footer">
+      <div className="container">
+        <div className="flex-container">
           <div className="row">
             <div className="col text-cetner">
               <a className="link-dark col" href="Imagen de usb">
@@ -23,7 +12,6 @@ export const Footer = () => {
                   src={"src/images/usb.png"}
                   className="image-fluid"
                   alt="Imagen de USB"
-                  style={{ width: "3em" }}
                 />
               </a>
               <p className="my-1 text-light">© 2024</p>
@@ -34,7 +22,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="text-center m-0 p-0" style={{ flex: "1" }}>
+        <div className="flex-container">
           <ul className="list-unstyled">
             <li className="text-light">
               <a href="Sobre Nosotros" className="text-decoration-none">
@@ -48,7 +36,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="text-center m-0 p-0" style={{ flex: "1" }}>
+        <div className="flex-container">
           <ul className="list-unstyled">
             <li className="text-light">
               <a

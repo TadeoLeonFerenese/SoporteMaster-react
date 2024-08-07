@@ -1,4 +1,5 @@
 import { Card } from "../components";
+import "../Styles/HomePage.css";
 
 export const HomePage = () => {
   //! Funcione que desglosa el contenido de las cards
@@ -11,20 +12,7 @@ export const HomePage = () => {
     { title: "Utilidades", img: "utilidades.png" },
   ];
   return (
-    <div
-      className="container"
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "60px",
-        width: "100%",
-        maxWidth: "1360px",
-        justifyContent: "center",
-        margin: "0 auto",
-        height: "100%",
-      }}
-    >
-      {" "}
+    <div className="container">
       {items.map((item, index) => (
         //!aca con el map itineramos lo que se degloso antes
         <Card key={index} imageName={item.img} title={item.title} />

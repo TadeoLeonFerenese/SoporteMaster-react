@@ -1,7 +1,7 @@
 import { Banner, Footer, Navbar } from "../components";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { HomePage } from "../pages";
-import "./SMRoutes.css";
+import "../Styles/SMRoutes.css";
 
 export const SMroutes = () => {
   return (
