@@ -2,7 +2,6 @@ import { Card } from "../components";
 import "../Styles/HomePage.css";
 
 export const HomePage = () => {
-  //! Funcione que desglosa el contenido de las cards
   const items = [
     { title: "Imagenes Master", img: "iconoWindows.png" },
     { title: "Drivers", img: "drivers.png" },
@@ -13,10 +12,13 @@ export const HomePage = () => {
   ];
   return (
     <div className="container">
-      {items.map((item, index) => (
-        //!aca con el map itineramos lo que se degloso antes
-        <Card key={index} imageName={item.img} title={item.title} />
-      ))}
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        {items.map((item, index) => (
+          <div className="col" key={index}>
+            <Card imageName={item.img} title={item.title} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

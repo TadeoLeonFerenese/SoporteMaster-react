@@ -2,58 +2,62 @@ import "../Styles/Footer.css";
 
 export const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="container">
-        <div className="flex-container">
-          <div className="row">
-            <div className="col text-cetner">
-              <a className="link-dark col" href="Imagen de usb">
+        <div className="footer-content">
+          <div className="footer-section">
+            <div className="footer-logo">
+              <a href="/" className="logo-link">
                 <img
                   src={"src/images/usb.png"}
-                  className="image-fluid"
+                  className="footer-logo-img"
                   alt="Imagen de USB"
                 />
               </a>
-              <p className="my-1 text-light">© 2024</p>
+              <p className="copyright text-light">© 2024 Soporte Master</p>
             </div>
-            <div className="col">
-              <p className="text-light">Soporte Master</p>
+          </div>
+
+          <div className="footer-section">
+            <nav className="footer-nav">
+              <ul className="list-unstyled">
+                <li>
+                  <a href="/sobre-nosotros" className="text-decoration-none">
+                    <span className="text-light">Sobre Nosotros</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-decoration-none">
+                    <span className="text-light">Home</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div className="footer-section">
+            <div className="footer-contact">
+              <ul className="list-unstyled">
+                <li>
+                  <a
+                    href="mailto:dgt.soporte-master@pjn.gov.ar"
+                    className="text-decoration-none"
+                  >
+                    <span className="text-light fs-5">
+                      dgt.soporte-master@pjn.gov.ar
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <span className="text-light fs-5">
+                    Telefono: 4124-4568 / Int: 32681
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-
-        <div className="flex-container">
-          <ul className="list-unstyled">
-            <li className="text-light">
-              <a href="Sobre Nosotros" className="text-decoration-none">
-                <p className="text-light">Sobre Nosotros</p>
-              </a>
-            </li>
-            <li className="text-light">
-              <a href="Home" className="text-decoration-none">
-                <p className="text-light">Home</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="flex-container">
-          <ul className="list-unstyled">
-            <li className="text-light">
-              <a
-                href="mailto: dgt.soporte-master@pjn.gov.ar"
-                className="text-decoration-none button"
-              >
-                <p className="text-light fs-5">dgt.soporte-master@pjn.gov.ar</p>
-              </a>
-            </li>
-            <li className="text-light">
-              <p className="text-light fs-5">
-                Telefono: 4124-4568 / Int: 32681
-              </p>
-            </li>
-          </ul>
-        </div>
       </div>
-    </div>
+    </footer>
   );
 };
