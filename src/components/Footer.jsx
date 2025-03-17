@@ -12,6 +12,7 @@ export const Footer = () => {
                   src={"src/images/usb.png"}
                   className="footer-logo-img"
                   alt="Imagen de USB"
+                  style={{ background: 'transparent' }}
                 />
               </a>
               <p className="copyright text-light">© 2024 Soporte Master</p>

@@ -23,7 +23,7 @@
 }
 
 img {
-  background-color: rgb(38 67 195);
+  background-color: rgb(34 46 67);
   padding: 1rem !important;
   transition: transform 0.3s;
 }
@@ -62,4 +62,34 @@ img {
 
 body.modal-open {
   overflow: hidden;
+}
+
+.card .btn-primary {
+  background-color: rgb(34 46 67) !important;
+  border-color: rgb(34 46 67) !important;
+  color: white !important;
+}
+
+.card .btn-primary:hover,
+.card .btn-primary:focus,
+.card .btn-primary:active {
+  background-color: rgb(44 56 77) !important;
+  border-color: rgb(44 56 77) !important;
+  box-shadow: none !important;
+}
+
+/* Styles del boton del Modal*/
+.modal-content .btn-secondary {
+  background-color: rgb(34 46 67) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.modal-content .btn-secondary:hover {
+  background-color: rgb(44 56 77) !important;
+  border: none !important;
+}
+
+.modal-content .btn-secondary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(34, 46, 67, 0.5) !important;
 }
