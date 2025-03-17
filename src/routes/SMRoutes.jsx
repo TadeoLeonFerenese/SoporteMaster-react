@@ -1,14 +1,14 @@
-import { Banner, Footer, Navbar } from "../components";
+import { Footer } from "../components";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { HomePage } from "../pages";
+import { Header } from "../components/Header";
 import "../Styles/SMRoutes.css";
 
 export const SMroutes = () => {
   return (
     <>
       <div className="contenedor">
-        <Navbar />
-        <Banner />
+        <Header />
 
         <div className="container">
           <div className="d-flex justify-content-center align-items-center my-5 ">
