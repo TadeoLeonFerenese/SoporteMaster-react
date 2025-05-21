@@ -7,7 +7,7 @@ export const HomePage = () => {
     { title: "Drivers", img: "drivers.png" },
     { title: "Pendrive Masterizado", img: "iconopendrivemaster.png" },
     { title: "Software", img: "iconoSoftware.png" },
-    { title: "Reparción de Errores", img: "erroresrepair.png" },
+    { title: "Reparación de Errores", img: "erroresrepair.png" },
     { title: "Utilidades", img: "utilidades.png" },
   ];
   return (

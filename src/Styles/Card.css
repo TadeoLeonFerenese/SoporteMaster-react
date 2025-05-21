@@ -123,3 +123,33 @@ body.modal-open {
 .modal-content .btn-secondary:focus {
   box-shadow: 0 0 0 0.25rem rgba(34, 46, 67, 0.5) !important;
 }
+
+/* Estilos para los botones de descarga */
+.list-group-item .btn-primary {
+  width: 120px; /* Ancho reducido para el botón DESCARGAR */
+  font-size: 0.85rem;
+  padding: 0.375rem 0.5rem;
+}
+
+/* Estilos para los botones del footer del modal */
+.modal-footer .btn {
+  width: 200px; /* Ancho reducido para los botones del footer */
+  font-size: 0.9rem;
+}
+
+/* Asegurar que el contenido del modal se vea bien */
+.modal-content {
+  max-width: 100%;
+}
+
+/* Mejorar el espaciado en dispositivos móviles */
+@media (max-width: 768px) {
+  .modal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal-footer .btn {
+    width: 100%;
+  }
+}
