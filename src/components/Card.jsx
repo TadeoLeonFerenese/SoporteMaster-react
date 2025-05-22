@@ -8,6 +8,8 @@ export const Card = ({ imageName, title }) => {
   const [subFolderContent, setSubFolderContent] = useState(null);
   const [nestedFolder, setNestedFolder] = useState(null);
   const [nestedFolderContent, setNestedFolderContent] = useState(null);
+  const [deepNestedFolder, setDeepNestedFolder] = useState(null);
+  const [deepNestedFolderContent, setDeepNestedFolderContent] = useState(null);
 
   const imagePath = (imageName) => {
     return `src/images/${imageName}`;
@@ -34,8 +36,133 @@ export const Card = ({ imageName, title }) => {
                     },
                   ],
                 },
-                { name: "Notebooks", path: "Bangho/Notebooks/" },
-                { name: "Optimas y Cross", path: "Bangho/Optimas y Cross/" },
+                {
+                  name: "Notebooks",
+                  path: "Bangho/Notebooks/",
+                  subFolders: [
+                    {
+                      name: "B350_XHU",
+                      path: "Bangho/Notebooks/B350_XHU/",
+                      subFolders: [
+                        {
+                          name: "B350_Win7x64",
+                          path: "Bangho/Notebooks/B350_XHU/B350_Win7x64/",
+                          files: [
+                            {
+                              name: "Notebook B350 Win7x64 Genérica (Abril 2021)",
+                              file: "NotebookB350-Win7x64-Generica2-Abril2021.wim",
+                            },
+                          ],
+                        },
+                        {
+                          name: "B350_Win10_(Recomendada)",
+                          path: "Bangho/Notebooks/B350_XHU/B350_Win10_(Recomendada)/",
+                          files: [
+                            {
+                              name: "Notebook B350 Win10 (Recomendada)",
+                              file: "NotebookB350-Win10-Recomendada.wim",
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      name: "BES_E4",
+                      path: "Bangho/Notebooks/BES_E4/",
+                      files: [
+                        {
+                          name: "Notebook E4 Win10x64 V2.0 (Enero 2023)",
+                          file: "NotebookE4-Win10x64-V2.0-Enero2023.wim",
+                        },
+                      ],
+                    },
+                    {
+                      name: "BES_E5",
+                      path: "Bangho/Notebooks/BES_E5/",
+                      files: [
+                        {
+                          name: "Notebook E5 Win10x64 V1.3 (Octubre 2022)",
+                          file: "NotebookE5-Win10x64-V1.3-Octubre2022.wim",
+                        },
+                      ],
+                    },
+                    {
+                      name: "Versiones anteriores",
+                      path: "Bangho/Notebooks/__Versiones_anteriores/",
+                      files: [
+                        {
+                          name: "Versiones anteriores de Notebooks",
+                          file: "versiones-anteriores.wim",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  name: "Optima y Cross",
+                  path: "Bangho/Optimas y Cross/",
+                  subFolders: [
+                    {
+                      name: "Comun ID1793",
+                      path: "Bangho/Optimas y Cross/Comun_ID1793/",
+                      subFolders: [
+                        {
+                          name: "Optima Win7x64 (Recomendada)",
+                          path: "Bangho/Optimas y Cross/Comun_ID1793/Optima_Win7x64_(Recomendada)/",
+                          files: [
+                            {
+                              name: "Optima ID1793 Win7x64 (Noviembre 2022)",
+                              file: "OptimaID1793-Win7x64-V1-3-Noviembre2022.wim",
+                            },
+                          ],
+                        },
+                        {
+                          name: "Optima Win7x86 Generica y CC_sarmiento",
+                          path: "Bangho/Optimas y Cross/Comun_ID1793/Optima_Win7x86_Generica_y_CC_sarmiento/",
+                          files: [
+                            {
+                              name: "Optima Win7x86 Sarmiento (Septiembre 2021)",
+                              file: "OptimaComun-Win7x86-Generica-Ver1-2-Septiembre2021.wim",
+                            },
+                          ],
+                        },
+                        {
+                          name: "Optima Win10x64",
+                          path: "Bangho/Optimas y Cross/Comun_ID1793/Optima_Win10x64/",
+                          files: [
+                            {
+                              name: "Optima ID1793 Win10x64 (Marzo 2025)",
+                              file: "OptimaID1793-Win10x64-Marzo2025-v1.2.wim",
+                            },
+                          ],
+                        },
+                        {
+                          name: "Versiones anteriores",
+                          path: "Bangho/Optimas y Cross/Comun_ID1793/__Versiones_Anteriores/",
+                          subFolders: [
+                            // Cambia deepNestedFolderContent a subFolders
+                            {
+                              name: "Optima Win7x86 CC Sarmiento",
+                              path: "Bangho/Optimas y Cross/Comun_ID1793/__Versiones_Anteriores/Optima_Win7x86_CC_Samiento/",
+                              subFolders: [
+                                {
+                                  name: "Optima Win7x86 CC Sarmiento (Agosto 2021)",
+                                  path: "Bangho/Optimas y Cross/Comun_ID1793/__Versiones_Anteriores/Optima_Win7x86_CC_Samiento/",
+                                  files: [
+                                    {
+                                      name: "Optima Win7x86 CC Sarmiento (Agosto 2021)",
+                                      file: "Optima-Win7x86-Samiento-Version1-1-agosto2021.wim",
+                                    },
+                                  ],
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
                 {
                   name: "Ziva",
                   path: "Bangho/Ziva/",
@@ -66,7 +193,7 @@ export const Card = ({ imageName, title }) => {
                       files: [
                         {
                           name: "Ziva Win7 x64 Genérica (Feb 2021)",
-                          file: "	Ziva-Generica4-Win7x64-Febero2021.wim",
+                          file: "Ziva-Generica4-Win7x64-Febero2021.wim",
                         },
                       ],
                     },
@@ -168,7 +295,17 @@ export const Card = ({ imageName, title }) => {
     if (subFolder.subFolders) {
       setNestedFolder(subFolder);
       setNestedFolderContent(subFolder.subFolders);
+      // Resetear los niveles más profundos cuando navegamos a un nuevo nivel 2
+      setDeepNestedFolder(null);
+      setDeepNestedFolderContent(null);
+    } else if (subFolder.files) {
+      // Si tiene archivos directos pero no subcarpetas
+      window.open(
+        `http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}`,
+        "_blank"
+      );
     } else {
+      // Si no tiene ni subcarpetas ni archivos
       window.open(
         `http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}`,
         "_blank"
@@ -176,8 +313,29 @@ export const Card = ({ imageName, title }) => {
     }
   };
 
+  // Nueva función para manejar el clic en carpetas de nivel 3
+  const handleDeepNestedFolderClick = (folder) => {
+    if (folder.deepNestedFolderContent) {
+      setDeepNestedFolder(folder);
+      setDeepNestedFolderContent(folder.deepNestedFolderContent);
+    } else if (folder.subFolders) {
+      setDeepNestedFolder(folder);
+      setDeepNestedFolderContent(folder.subFolders);
+    } else if (folder.files) {
+      // En lugar de abrir una nueva ventana, mostramos los archivos directamente
+      setDeepNestedFolder(folder);
+      // No establecemos deepNestedFolderContent porque no hay subcarpetas
+    } else {
+      // Si no tiene ni subcarpetas ni archivos, simplemente actualizamos el estado
+      setDeepNestedFolder(folder);
+    }
+  };
+
   const handleBackClick = () => {
-    if (nestedFolder) {
+    if (deepNestedFolder) {
+      setDeepNestedFolder(null);
+      setDeepNestedFolderContent(null);
+    } else if (nestedFolder) {
       setNestedFolder(null);
       setNestedFolderContent(null);
     } else {
@@ -232,7 +390,7 @@ export const Card = ({ imageName, title }) => {
               <h6>Descripción:</h6>
               <p>{modalContent.description}</p>
 
-              {(selectedFolder || nestedFolder) && (
+              {(selectedFolder || nestedFolder || deepNestedFolder) && (
                 <button
                   className="btn btn-secondary mb-3"
                   onClick={handleBackClick}
@@ -243,14 +401,84 @@ export const Card = ({ imageName, title }) => {
               )}
 
               <h6>
-                {nestedFolder
+                {deepNestedFolder
+                  ? `Contenido de ${deepNestedFolder.name}:`
+                  : nestedFolder
                   ? `Contenido de ${nestedFolder.name}:`
                   : selectedFolder
                   ? `Contenido de ${selectedFolder.name}:`
                   : "Carpetas disponibles:"}
               </h6>
               <div className="list-group mb-3">
-                {nestedFolder && nestedFolderContent
+                {deepNestedFolder && deepNestedFolderContent
+                  ? // Mostrar contenido de la subcarpeta de nivel 4
+                    deepNestedFolderContent.map((item, index) => (
+                      <div
+                        key={index}
+                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                      >
+                        <span>{item.name}</span>
+                        {item.subFolders ? (
+                          // Si tiene subcarpetas anidadas más profundas
+                          <a
+                            href="#"
+                            className="btn btn-sm btn-primary"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleDeepNestedFolderClick(item);
+                            }}
+                          >
+                            <i className="bi bi-folder me-1"></i>
+                            EXPLORAR
+                          </a>
+                        ) : item.files ? (
+                          // Solo mostrar DESCARGAR si estamos en el nivel más profundo
+                          <a
+                            href={`http://5.0.32.75/pyp/${modalContent.path}${item.path}${item.files[0].file}`}
+                            className="btn btn-sm btn-success"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download
+                          >
+                            <i className="bi bi-download me-1"></i>
+                            DESCARGAR
+                          </a>
+                        ) : (
+                          <a
+                            href="#"
+                            className="btn btn-sm btn-primary"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleDeepNestedFolderClick(item);
+                            }}
+                          >
+                            <i className="bi bi-folder me-1"></i>
+                            EXPLORAR
+                          </a>
+                        )}
+                      </div>
+                    ))
+                  : deepNestedFolder && deepNestedFolder.files
+                  ? // Mostrar archivos de la carpeta de nivel 3 sin subcarpetas
+                    deepNestedFolder.files.map((file, index) => (
+                      <div
+                        key={index}
+                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                      >
+                        <span>{file.name}</span>
+                        <a
+                          href={`http://5.0.32.75/pyp/${modalContent.path}${deepNestedFolder.path}${file.file}`}
+                          className="btn btn-sm btn-success"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          download
+                        >
+                          <i className="bi bi-download me-1"></i>
+                          DESCARGAR
+                        </a>
+                      </div>
+                    ))
+                  : nestedFolder && nestedFolderContent
                   ? // Mostrar contenido de la subcarpeta anidada (nivel 3)
                     nestedFolderContent.map((item, index) => (
                       <div
@@ -258,37 +486,39 @@ export const Card = ({ imageName, title }) => {
                         className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                       >
                         <span>{item.name}</span>
-                        {item.files ? (
-                          <div>
-                            <button
-                              className="btn btn-sm btn-primary me-2"
-                              onClick={() =>
-                                window.open(
-                                  `http://5.0.32.75/pyp/${modalContent.path}${item.path}`,
-                                  "_blank"
-                                )
-                              }
-                            >
-                              <i className="bi bi-folder me-1"></i>
-                              EXPLORAR
-                            </button>
-                            <a
-                              href={`http://5.0.32.75/pyp/${modalContent.path}${item.path}${item.files[0].file}`}
-                              className="btn btn-sm btn-success"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              download
-                            >
-                              <i className="bi bi-download me-1"></i>
-                              DESCARGAR
-                            </a>
-                          </div>
-                        ) : (
+                        {item.subFolders || item.deepNestedFolderContent ? (
+                          // Si tiene subcarpetas anidadas más profundas
                           <a
-                            href={`http://5.0.32.75/pyp/${modalContent.path}${item.path}`}
+                            href="#"
                             className="btn btn-sm btn-primary"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleDeepNestedFolderClick(item);
+                            }}
+                          >
+                            <i className="bi bi-folder me-1"></i>
+                            EXPLORAR
+                          </a>
+                        ) : item.files ? (
+                          // Eliminar el botón EXPLORAR y solo mostrar DESCARGAR si estamos en el nivel más profundo
+                          <a
+                            href={`http://5.0.32.75/pyp/${modalContent.path}${item.path}${item.files[0].file}`}
+                            className="btn btn-sm btn-success"
                             target="_blank"
                             rel="noopener noreferrer"
+                            download
+                          >
+                            <i className="bi bi-download me-1"></i>
+                            DESCARGAR
+                          </a>
+                        ) : (
+                          <a
+                            href="#"
+                            className="btn btn-sm btn-primary"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleDeepNestedFolderClick(item);
+                            }}
                           >
                             <i className="bi bi-folder me-1"></i>
                             EXPLORAR
@@ -378,104 +608,6 @@ export const Card = ({ imageName, title }) => {
                       </div>
                     ))}
               </div>
-
-              {/* Puedes eliminar estas secciones ya que no se utilizarán más */}
-              {/* Mostrar archivos de subcarpetas cuando se seleccionan */}
-              {/* {selectedFolder && !nestedFolder && (
-                <div>
-                  {subFolderContent.map(
-                    (subFolder, index) =>
-                      subFolder.files && (
-                        <div
-                          key={`files-container-${index}`}
-                          className="collapse mt-3"
-                          id={`files-${index}`}
-                        >
-                          <div className="card card-body">
-                            <h6>Archivos en {subFolder.name}:</h6>
-                            <div className="d-flex flex-wrap">
-                              {subFolder.files.map((file, fileIndex) => (
-                                <div
-                                  key={fileIndex}
-                                  className="m-2"
-                                  style={{ width: '300px' }}
-                                >
-                                  <div className="card shadow-sm h-100">
-                                    <div className="card-body d-flex flex-column">
-                                      <p className="card-text mb-2 text-truncate" title={file.name}>
-                                        {file.name}
-                                      </p>
-                                      <a
-                                        href={`http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}${file.file}`}
-                                        className="btn btn-sm btn-dark mt-auto"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        download
-                                      >
-                                        <i className="bi bi-download me-1"></i>
-                                        DESCARGAR
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      )
-                  )}
-                </div>
-              )} */}
-
-              {/* Mostrar archivos de subcarpetas anidadas cuando se seleccionan */}
-              {nestedFolder && (
-                <div>
-                  {nestedFolderContent.map(
-                    (item, index) =>
-                      item.files && (
-                        <div
-                          key={`nested-files-container-${index}`}
-                          className="collapse mt-3"
-                          id={`nested-files-${index}`}
-                        >
-                          <div className="card card-body">
-                            <h6>Archivos en {item.name}:</h6>
-                            <div className="d-flex flex-wrap">
-                              {item.files.map((file, fileIndex) => (
-                                <div
-                                  key={fileIndex}
-                                  className="m-2"
-                                  style={{ width: "300px" }}
-                                >
-                                  <div className="card shadow-sm h-100">
-                                    <div className="card-body d-flex flex-column">
-                                      <p
-                                        className="card-text mb-2 text-truncate"
-                                        title={file.name}
-                                      >
-                                        {file.name}
-                                      </p>
-                                      <a
-                                        href={`http://5.0.32.75/pyp/${modalContent.path}${item.path}${file.file}`}
-                                        className="btn btn-sm btn-dark mt-auto"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        download
-                                      >
-                                        <i className="bi bi-download me-1"></i>
-                                        DESCARGAR
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      )
-                  )}
-                </div>
-              )}
             </div>
             <div className="modal-footer d-flex justify-content-between">
               <a
@@ -523,3 +655,5 @@ Card.propTypes = {
   imageName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
+
+export default Card;
