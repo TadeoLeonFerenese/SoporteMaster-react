@@ -1,5 +1,7 @@
+// Añadir al inicio del archivo
 import PropTypes from "prop-types";
 import { useState } from "react";
+import axios from "axios"; // Importar axios
 import "../Styles/Card.css";
 
 export const Card = ({ imageName, title }) => {
@@ -10,266 +12,49 @@ export const Card = ({ imageName, title }) => {
   const [nestedFolderContent, setNestedFolderContent] = useState(null);
   const [deepNestedFolder, setDeepNestedFolder] = useState(null);
   const [deepNestedFolderContent, setDeepNestedFolderContent] = useState(null);
+  const [isLoading, setIsLoading] = useState(false); // Nuevo estado para la carga
+  const [currentPath, setCurrentPath] = useState(""); // Para mantener el path actual de navegación
 
   const imagePath = (imageName) => {
     return `src/images/${imageName}`;
   };
 
-  // Función para obtener el contenido específico según el título
+  // Función para obtener la ruta base y descripción según el título
   const getModalContent = (title) => {
     switch (title) {
       case "Imagenes Master":
         return {
           description: "Imágenes de sistemas operativos para masterización",
-          items: [
-            {
-              name: "Bangho",
-              file: "Bangho/",
-              subFolders: [
-                {
-                  name: "AIO",
-                  path: "Bangho/AIO/",
-                  files: [
-                    {
-                      name: "Install Bangho AIO Con Sysprep",
-                      file: "install-BanghoAioConSysprep.wim",
-                    },
-                  ],
-                },
-                {
-                  name: "Notebooks",
-                  path: "Bangho/Notebooks/",
-                  subFolders: [
-                    {
-                      name: "B350_XHU",
-                      path: "Bangho/Notebooks/B350_XHU/",
-                      subFolders: [
-                        {
-                          name: "B350_Win7x64",
-                          path: "Bangho/Notebooks/B350_XHU/B350_Win7x64/",
-                          files: [
-                            {
-                              name: "Notebook B350 Win7x64 Genérica (Abril 2021)",
-                              file: "NotebookB350-Win7x64-Generica2-Abril2021.wim",
-                            },
-                          ],
-                        },
-                        {
-                          name: "B350_Win10_(Recomendada)",
-                          path: "Bangho/Notebooks/B350_XHU/B350_Win10_(Recomendada)/",
-                          files: [
-                            {
-                              name: "Notebook B350 Win10 (Recomendada)",
-                              file: "NotebookB350-Win10-Recomendada.wim",
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: "BES_E4",
-                      path: "Bangho/Notebooks/BES_E4/",
-                      files: [
-                        {
-                          name: "Notebook E4 Win10x64 V2.0 (Enero 2023)",
-                          file: "NotebookE4-Win10x64-V2.0-Enero2023.wim",
-                        },
-                      ],
-                    },
-                    {
-                      name: "BES_E5",
-                      path: "Bangho/Notebooks/BES_E5/",
-                      files: [
-                        {
-                          name: "Notebook E5 Win10x64 V1.3 (Octubre 2022)",
-                          file: "NotebookE5-Win10x64-V1.3-Octubre2022.wim",
-                        },
-                      ],
-                    },
-                    {
-                      name: "Versiones anteriores",
-                      path: "Bangho/Notebooks/__Versiones_anteriores/",
-                      files: [
-                        {
-                          name: "Versiones anteriores de Notebooks",
-                          file: "versiones-anteriores.wim",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                {
-                  name: "Optima y Cross",
-                  path: "Bangho/Optimas y Cross/",
-                  subFolders: [
-                    {
-                      name: "Comun ID1793",
-                      path: "Bangho/Optimas y Cross/Comun_ID1793/",
-                      subFolders: [
-                        {
-                          name: "Optima Win7x64 (Recomendada)",
-                          path: "Bangho/Optimas y Cross/Comun_ID1793/Optima_Win7x64_(Recomendada)/",
-                          files: [
-                            {
-                              name: "Optima ID1793 Win7x64 (Noviembre 2022)",
-                              file: "OptimaID1793-Win7x64-V1-3-Noviembre2022.wim",
-                            },
-                          ],
-                        },
-                        {
-                          name: "Optima Win7x86 Generica y CC_sarmiento",
-                          path: "Bangho/Optimas y Cross/Comun_ID1793/Optima_Win7x86_Generica_y_CC_sarmiento/",
-                          files: [
-                            {
-                              name: "Optima Win7x86 Sarmiento (Septiembre 2021)",
-                              file: "OptimaComun-Win7x86-Generica-Ver1-2-Septiembre2021.wim",
-                            },
-                          ],
-                        },
-                        {
-                          name: "Optima Win10x64",
-                          path: "Bangho/Optimas y Cross/Comun_ID1793/Optima_Win10x64/",
-                          files: [
-                            {
-                              name: "Optima ID1793 Win10x64 (Marzo 2025)",
-                              file: "OptimaID1793-Win10x64-Marzo2025-v1.2.wim",
-                            },
-                          ],
-                        },
-                        {
-                          name: "Versiones anteriores",
-                          path: "Bangho/Optimas y Cross/Comun_ID1793/__Versiones_Anteriores/",
-                          subFolders: [
-                            // Cambia deepNestedFolderContent a subFolders
-                            {
-                              name: "Optima Win7x86 CC Sarmiento",
-                              path: "Bangho/Optimas y Cross/Comun_ID1793/__Versiones_Anteriores/Optima_Win7x86_CC_Samiento/",
-                              subFolders: [
-                                {
-                                  name: "Optima Win7x86 CC Sarmiento (Agosto 2021)",
-                                  path: "Bangho/Optimas y Cross/Comun_ID1793/__Versiones_Anteriores/Optima_Win7x86_CC_Samiento/",
-                                  files: [
-                                    {
-                                      name: "Optima Win7x86 CC Sarmiento (Agosto 2021)",
-                                      file: "Optima-Win7x86-Samiento-Version1-1-agosto2021.wim",
-                                    },
-                                  ],
-                                },
-                              ],
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-                {
-                  name: "Ziva",
-                  path: "Bangho/Ziva/",
-                  subFolders: [
-                    {
-                      name: "Ziva Win7 x64 (Recomendada)",
-                      path: "Bangho/Ziva/Ziva_Win7x64_(Recomendada)/",
-                      files: [
-                        {
-                          name: "Ziva Win7 x64 Genérica (Nov 2022)",
-                          file: "Ziva-Win7x64-Generica-Ver1-3-Noviembre2022.wim",
-                        },
-                      ],
-                    },
-                    {
-                      name: "Ziva Win7 x86 Genérica y Sarmiento",
-                      path: "Bangho/Ziva/Ziva_Win7x86_Generica_y_Sarmiento/",
-                      files: [
-                        {
-                          name: "Ziva Win7 x86 Genérica (Sep 2021)",
-                          file: "Ziva-Win7x86-Generica-Version1-2-Septiembre2021.wim",
-                        },
-                      ],
-                    },
-                    {
-                      name: "Versiones anteriores",
-                      path: "Bangho/Ziva/__Versiones_anteriores/",
-                      files: [
-                        {
-                          name: "Ziva Win7 x64 Genérica (Feb 2021)",
-                          file: "Ziva-Generica4-Win7x64-Febero2021.wim",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            { name: "Dell", file: "Dell/" },
-            { name: "HP", file: "HP/" },
-            { name: "Lenovo", file: "Lenovo/" },
-            { name: "EXO", file: "EXO/" },
-            { name: "Sansei", file: "Sansei/" },
-            { name: "Windows", file: "Windows/" },
-            { name: "Máquinas Virtuales", file: "__MaquinasVirtuales/" },
-          ],
           path: "02__Imagenes_Master/",
         };
       case "Drivers":
         return {
           description: "Controladores para diferentes dispositivos",
-          items: [
-            { name: "Impresoras", file: "Impresoras/" },
-            { name: "Scanners", file: "Scanners/" },
-            { name: "Tarjetas de red", file: "Network/" },
-            { name: "Tarjetas de video", file: "Video/" },
-          ],
           path: "04__Drivers/",
         };
       case "Pendrive Masterizado":
         return {
           description: "Herramientas para crear pendrives de arranque",
-          items: [
-            { name: "Rufus", file: "Rufus/" },
-            { name: "Ventoy", file: "Ventoy/" },
-            { name: "Windows USB/DVD Tools", file: "Windows_USB_Tools/" },
-            { name: "Instrucciones", file: "Instrucciones/" },
-          ],
           path: "01__Pendrive_para_masterizado_y_testeos/",
         };
       case "Software":
         return {
           description: "Software esencial para equipos",
-          items: [
-            { name: "Navegadores", file: "Navegadores/" },
-            { name: "Compresores", file: "Compresores/" },
-            { name: "Antivirus", file: "Antivirus/" },
-            { name: "Herramientas de productividad", file: "Productividad/" },
-          ],
           path: "03__Software/",
         };
       case "Reparación de Errores":
         return {
           description: "Herramientas para solucionar problemas comunes",
-          items: [
-            { name: "Reparación de Windows", file: "Windows/" },
-            { name: "Recuperación de datos", file: "Recuperacion/" },
-            { name: "Solución de problemas de arranque", file: "Boot/" },
-            { name: "Herramientas de diagnóstico", file: "Diagnostico/" },
-          ],
           path: "08__Reparación_de_errores/",
         };
       case "Utilidades":
         return {
           description: "Utilidades para mantenimiento y soporte",
-          items: [
-            { name: "Herramientas de limpieza", file: "Limpieza/" },
-            { name: "Monitoreo de sistema", file: "Monitoreo/" },
-            { name: "Optimización de rendimiento", file: "Optimizacion/" },
-            { name: "Herramientas de red", file: "Red/" },
-          ],
           path: "07__Utilidades_Soporte/",
         };
       default:
         return {
           description: "Información no disponible",
-          items: [],
           path: "",
         };
     }
@@ -277,70 +62,130 @@ export const Card = ({ imageName, title }) => {
 
   const modalContent = getModalContent(title);
 
-  const handleFolderClick = (item) => {
-    if (item.subFolders) {
+  // Nueva función para obtener el contenido de la carpeta desde el servidor
+  const fetchFolderContent = async (path) => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get(`/pyp/${path}`, {
+        headers: {
+          'Accept': 'text/html',
+          'Content-Type': 'text/html'
+        }
+      });
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(response.data, "text/html");
+      const links = Array.from(doc.querySelectorAll("a"));
+
+      const content = links
+        .filter((link) => link.textContent !== "Parent Directory")
+        .map((link) => {
+          const name = link.textContent.replace(/\/$/, "");
+          const isDirectory = link.textContent.endsWith("/");
+          const href = link.getAttribute("href");
+          return {
+            name: name,
+            path: path + href,
+            isDirectory: isDirectory,
+            file: isDirectory ? null : href,
+          };
+        });
+
+      return content;
+    } catch (error) {
+      console.error("Error fetching folder content:", error);
+      return [];
+    } finally {
+      setIsLoading(false);
+    }
+};
+
+  // Función para manejar la apertura del modal y la carga inicial
+  const handleOpenModal = async () => {
+    setShowModal(true);
+    setCurrentPath(modalContent.path);
+    const initialContent = await fetchFolderContent(modalContent.path);
+    setSubFolderContent(initialContent);
+    setSelectedFolder({ name: title, path: modalContent.path }); // Establecer la carpeta inicial como seleccionada
+  };
+
+  const handleFolderClick = async (item) => {
+    if (item.isDirectory) {
       setSelectedFolder(item);
-      setSubFolderContent(item.subFolders);
+      setCurrentPath(item.path);
+      const content = await fetchFolderContent(item.path);
+      setSubFolderContent(content);
       setNestedFolder(null);
       setNestedFolderContent(null);
+      setDeepNestedFolder(null);
+      setDeepNestedFolderContent(null);
     } else {
-      window.open(
-        `http://5.0.32.75/pyp/${modalContent.path}${item.file}`,
-        "_blank"
-      );
+      // Si es un archivo, abrirlo directamente
+      window.open(`http://5.0.32.75/pyp/${item.path}`, "_blank");
     }
   };
 
-  const handleSubFolderClick = (subFolder) => {
-    if (subFolder.subFolders) {
+  const handleSubFolderClick = async (subFolder) => {
+    if (subFolder.isDirectory) {
       setNestedFolder(subFolder);
-      setNestedFolderContent(subFolder.subFolders);
-      // Resetear los niveles más profundos cuando navegamos a un nuevo nivel 2
+      setCurrentPath(subFolder.path);
+      const content = await fetchFolderContent(subFolder.path);
+      setNestedFolderContent(content);
       setDeepNestedFolder(null);
       setDeepNestedFolderContent(null);
-    } else if (subFolder.files) {
-      // Si tiene archivos directos pero no subcarpetas
-      window.open(
-        `http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}`,
-        "_blank"
-      );
     } else {
-      // Si no tiene ni subcarpetas ni archivos
-      window.open(
-        `http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}`,
-        "_blank"
-      );
+      window.open(`http://5.0.32.75/pyp/${subFolder.path}`, "_blank");
     }
   };
 
-  // Nueva función para manejar el clic en carpetas de nivel 3
-  const handleDeepNestedFolderClick = (folder) => {
-    if (folder.deepNestedFolderContent) {
+  const handleDeepNestedFolderClick = async (folder) => {
+    if (folder.isDirectory) {
       setDeepNestedFolder(folder);
-      setDeepNestedFolderContent(folder.deepNestedFolderContent);
-    } else if (folder.subFolders) {
-      setDeepNestedFolder(folder);
-      setDeepNestedFolderContent(folder.subFolders);
-    } else if (folder.files) {
-      // En lugar de abrir una nueva ventana, mostramos los archivos directamente
-      setDeepNestedFolder(folder);
-      // No establecemos deepNestedFolderContent porque no hay subcarpetas
+      setCurrentPath(folder.path);
+      const content = await fetchFolderContent(folder.path);
+      setDeepNestedFolderContent(content);
     } else {
-      // Si no tiene ni subcarpetas ni archivos, simplemente actualizamos el estado
-      setDeepNestedFolder(folder);
+      window.open(`http://5.0.32.75/pyp/${folder.path}`, "_blank");
     }
   };
 
-  const handleBackClick = () => {
+  const handleBackClick = async () => {
     if (deepNestedFolder) {
+      const parentPath = deepNestedFolder.path.substring(
+        0,
+        deepNestedFolder.path.lastIndexOf(
+          "/",
+          deepNestedFolder.path.length - 2
+        ) + 1
+      );
       setDeepNestedFolder(null);
       setDeepNestedFolderContent(null);
+      setCurrentPath(parentPath);
+      const content = await fetchFolderContent(parentPath);
+      // Necesitamos determinar a qué nivel volver para establecer el estado correcto
+      // Esto es un poco más complejo y podría requerir un stack de rutas visitadas
+      // Por ahora, asumimos que volvemos al nivel anterior de nestedFolder o selectedFolder
+      if (nestedFolder) {
+        setNestedFolderContent(content);
+      } else if (selectedFolder) {
+        setSubFolderContent(content);
+      }
     } else if (nestedFolder) {
+      const parentPath = nestedFolder.path.substring(
+        0,
+        nestedFolder.path.lastIndexOf("/", nestedFolder.path.length - 2) + 1
+      );
       setNestedFolder(null);
       setNestedFolderContent(null);
-    } else {
+      setCurrentPath(parentPath);
+      const content = await fetchFolderContent(parentPath);
+      if (selectedFolder) {
+        setSubFolderContent(content);
+      }
+    } else if (selectedFolder) {
       setSelectedFolder(null);
       setSubFolderContent(null);
+      setCurrentPath(modalContent.path);
     }
   };
 
@@ -357,7 +202,7 @@ export const Card = ({ imageName, title }) => {
           <p className="card-text">{modalContent.description}</p>
           <button
             className="btn btn-primary"
-            onClick={() => setShowModal(true)}
+            onClick={handleOpenModal} // Cambiado para usar la nueva función
           >
             Ver Contenido
           </button>
@@ -374,8 +219,16 @@ export const Card = ({ imageName, title }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">
-                {selectedFolder ? `${title} - ${selectedFolder.name}` : title}
+                {deepNestedFolder
+                  ? `${title} - ${deepNestedFolder.name}`
+                  : nestedFolder
+                  ? `${title} - ${nestedFolder.name}`
+                  : selectedFolder
+                  ? `${title} - ${selectedFolder.name}`
+                  : title}
               </h5>
+              {/* Agregar esta línea para mostrar la ruta actual */}
+              <div className="current-path">Ruta actual: {currentPath}</div>
               <button
                 type="button"
                 className="btn-close"
@@ -383,6 +236,11 @@ export const Card = ({ imageName, title }) => {
                   setShowModal(false);
                   setSelectedFolder(null);
                   setSubFolderContent(null);
+                  setNestedFolder(null);
+                  setNestedFolderContent(null);
+                  setDeepNestedFolder(null);
+                  setDeepNestedFolderContent(null);
+                  setCurrentPath("");
                 }}
               ></button>
             </div>
@@ -410,64 +268,47 @@ export const Card = ({ imageName, title }) => {
                   : "Carpetas disponibles:"}
               </h6>
               <div className="list-group mb-3">
-                {deepNestedFolder && deepNestedFolderContent
-                  ? // Mostrar contenido de la subcarpeta de nivel 4
-                    deepNestedFolderContent.map((item, index) => (
-                      <div
-                        key={index}
-                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                      >
-                        <span>{item.name}</span>
-                        {item.subFolders ? (
-                          // Si tiene subcarpetas anidadas más profundas
-                          <a
-                            href="#"
-                            className="btn btn-sm btn-primary"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleDeepNestedFolderClick(item);
-                            }}
-                          >
-                            <i className="bi bi-folder me-1"></i>
-                            EXPLORAR
-                          </a>
-                        ) : item.files ? (
-                          // Solo mostrar DESCARGAR si estamos en el nivel más profundo
-                          <a
-                            href={`http://5.0.32.75/pyp/${modalContent.path}${item.path}${item.files[0].file}`}
-                            className="btn btn-sm btn-success"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            download
-                          >
-                            <i className="bi bi-download me-1"></i>
-                            DESCARGAR
-                          </a>
-                        ) : (
-                          <a
-                            href="#"
-                            className="btn btn-sm btn-primary"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleDeepNestedFolderClick(item);
-                            }}
-                          >
-                            <i className="bi bi-folder me-1"></i>
-                            EXPLORAR
-                          </a>
-                        )}
-                      </div>
-                    ))
-                  : deepNestedFolder && deepNestedFolder.files
-                  ? // Mostrar archivos de la carpeta de nivel 3 sin subcarpetas
-                    deepNestedFolder.files.map((file, index) => (
-                      <div
-                        key={index}
-                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                      >
-                        <span>{file.name}</span>
+                {isLoading ? (
+                  <div className="d-flex justify-content-center">
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Cargando...</span>
+                    </div>
+                  </div>
+                ) : (
+                  // Renderizado dinámico del contenido
+                  (
+                    deepNestedFolderContent ||
+                    nestedFolderContent ||
+                    subFolderContent
+                  )?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                    >
+                      <span>{item.name}</span>
+                      {item.isDirectory ? (
                         <a
-                          href={`http://5.0.32.75/pyp/${modalContent.path}${deepNestedFolder.path}${file.file}`}
+                          href="#"
+                          className="btn btn-sm btn-primary"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (deepNestedFolder) {
+                              handleDeepNestedFolderClick(item);
+                            } else if (nestedFolder) {
+                              handleDeepNestedFolderClick(item);
+                            } else if (selectedFolder) {
+                              handleSubFolderClick(item);
+                            } else {
+                              handleFolderClick(item);
+                            }
+                          }}
+                        >
+                          <i className="bi bi-folder me-1"></i>
+                          EXPLORAR
+                        </a>
+                      ) : (
+                        <a
+                          href={`/pyp/${item.path}`}
                           className="btn btn-sm btn-success"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -476,150 +317,13 @@ export const Card = ({ imageName, title }) => {
                           <i className="bi bi-download me-1"></i>
                           DESCARGAR
                         </a>
-                      </div>
-                    ))
-                  : nestedFolder && nestedFolderContent
-                  ? // Mostrar contenido de la subcarpeta anidada (nivel 3)
-                    nestedFolderContent.map((item, index) => (
-                      <div
-                        key={index}
-                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                      >
-                        <span>{item.name}</span>
-                        {item.subFolders || item.deepNestedFolderContent ? (
-                          // Si tiene subcarpetas anidadas más profundas
-                          <a
-                            href="#"
-                            className="btn btn-sm btn-primary"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleDeepNestedFolderClick(item);
-                            }}
-                          >
-                            <i className="bi bi-folder me-1"></i>
-                            EXPLORAR
-                          </a>
-                        ) : item.files ? (
-                          // Eliminar el botón EXPLORAR y solo mostrar DESCARGAR si estamos en el nivel más profundo
-                          <a
-                            href={`http://5.0.32.75/pyp/${modalContent.path}${item.path}${item.files[0].file}`}
-                            className="btn btn-sm btn-success"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            download
-                          >
-                            <i className="bi bi-download me-1"></i>
-                            DESCARGAR
-                          </a>
-                        ) : (
-                          <a
-                            href="#"
-                            className="btn btn-sm btn-primary"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleDeepNestedFolderClick(item);
-                            }}
-                          >
-                            <i className="bi bi-folder me-1"></i>
-                            EXPLORAR
-                          </a>
-                        )}
-                      </div>
-                    ))
-                  : !selectedFolder
-                  ? // Mostrar carpetas principales (nivel 1)
-                    modalContent.items.map((item, index) => (
-                      <div
-                        key={index}
-                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                      >
-                        <span>{item.name}</span>
-                        <a
-                          href="#"
-                          className="btn btn-sm btn-primary"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleFolderClick(item);
-                          }}
-                        >
-                          <i className="bi bi-folder me-1"></i>
-                          EXPLORAR
-                        </a>
-                      </div>
-                    ))
-                  : // Mostrar subcarpetas (nivel 2)
-                    subFolderContent.map((subFolder, index) => (
-                      <div
-                        key={index}
-                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                      >
-                        <span>{subFolder.name}</span>
-                        {subFolder.subFolders ? (
-                          // Si tiene subcarpetas anidadas (como Ziva)
-                          <a
-                            href="#"
-                            className="btn btn-sm btn-primary"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleSubFolderClick(subFolder);
-                            }}
-                          >
-                            <i className="bi bi-folder me-1"></i>
-                            EXPLORAR
-                          </a>
-                        ) : subFolder.files ? (
-                          // Si tiene archivos directos
-                          <div>
-                            <button
-                              className="btn btn-sm btn-primary me-2"
-                              onClick={() =>
-                                window.open(
-                                  `http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}`,
-                                  "_blank"
-                                )
-                              }
-                            >
-                              <i className="bi bi-folder me-1"></i>
-                              EXPLORAR
-                            </button>
-                            <a
-                              href={`http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}${subFolder.files[0].file}`}
-                              className="btn btn-sm btn-success"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              download
-                            >
-                              <i className="bi bi-download me-1"></i>
-                              DESCARGAR
-                            </a>
-                          </div>
-                        ) : (
-                          // Si es solo una carpeta sin archivos específicos
-                          <a
-                            href={`http://5.0.32.75/pyp/${modalContent.path}${subFolder.path}`}
-                            className="btn btn-sm btn-primary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <i className="bi bi-folder me-1"></i>
-                            EXPLORAR
-                          </a>
-                        )}
-                      </div>
-                    ))}
+                      )}
+                    </div>
+                  ))
+                )}
               </div>
             </div>
-            <div className="modal-footer d-flex justify-content-between">
-              <a
-                href={`http://5.0.32.75/pyp/${modalContent.path}${
-                  selectedFolder ? selectedFolder.file : ""
-                }`}
-                className="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                VER DIRECTORIO COMPLETO
-              </a>
+            <div className="modal-footer">
               <button
                 type="button"
                 className="btn btn-secondary"
@@ -627,6 +331,11 @@ export const Card = ({ imageName, title }) => {
                   setShowModal(false);
                   setSelectedFolder(null);
                   setSubFolderContent(null);
+                  setNestedFolder(null);
+                  setNestedFolderContent(null);
+                  setDeepNestedFolder(null);
+                  setDeepNestedFolderContent(null);
+                  setCurrentPath("");
                 }}
               >
                 Cerrar
@@ -635,18 +344,6 @@ export const Card = ({ imageName, title }) => {
           </div>
         </div>
       </div>
-
-      {/* Backdrop */}
-      {showModal && (
-        <div
-          className="modal-backdrop fade show"
-          onClick={() => {
-            setShowModal(false);
-            setSelectedFolder(null);
-            setSubFolderContent(null);
-          }}
-        ></div>
-      )}
     </>
   );
 };

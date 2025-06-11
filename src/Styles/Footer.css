@@ -1,29 +1,128 @@
 .footer {
   background-color: var(--primary-color);
-  padding: var(--spacing-xl) 0;
+  padding: 2rem 0;
   font-family: var(--font-family);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
   margin: 0 auto;
-  gap: var(--spacing-lg);
+  gap: 3rem;
 }
 
-/* Add hover animations */
-.footer-nav a,
-.footer-contact a {
-  transition: transform 0.2s ease;
-  display: inline-block;
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-nav a:hover,
-.footer-contact a:hover {
-  transform: translateY(-2px);
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo-img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.1);
+}
+
+.copyright {
+  color: #fff;
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.contact-title {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.contact-list li {
+  margin: 0.75rem 0;
+}
+
+.contact-link, .contact-phone {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #ccc;
+}
+
+.bi {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .contact-link, .contact-phone {
+    justify-content: center;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
 }
 
 /* Social media icons spacing if you add them */
@@ -80,3 +179,3164 @@
 a:hover .text-light {
   color: #ccc !important;
 }
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  background: transparent !important;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Make links and text more visible */
+.text-light {
+  color: #fff !important;
+}
+
+/* Hover effect for links */
+a:hover .text-light {
+  color: #ccc !important;
+}
+
+/* Social media icons spacing if you add them */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: auto

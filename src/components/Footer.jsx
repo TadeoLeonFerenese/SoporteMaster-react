@@ -11,48 +11,30 @@ export const Footer = () => {
                 <img
                   src={"src/images/usb.png"}
                   className="footer-logo-img"
-                  alt="Imagen de USB"
-                  style={{ background: 'transparent' }}
+                  alt="Soporte Master"
+                  style={{ background: "transparent" }}
                 />
               </a>
-              <p className="copyright text-light">© 2024 Soporte Master</p>
+              <p className="copyright">© 2024 Soporte Master</p>
             </div>
           </div>
 
           <div className="footer-section">
-            <nav className="footer-nav">
-              <ul className="list-unstyled">
-                <li>
-                  <a href="/sobre-nosotros" className="text-decoration-none">
-                    <span className="text-light">Sobre Nosotros</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="text-decoration-none">
-                    <span className="text-light">Home</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div className="footer-section">
             <div className="footer-contact">
-              <ul className="list-unstyled">
+              <h5 className="contact-title">Contacto</h5>
+              <ul className="list-unstyled contact-list">
                 <li>
                   <a
                     href="mailto:dgt.soporte-master@pjn.gov.ar"
-                    className="text-decoration-none"
+                    className="contact-link"
                   >
-                    <span className="text-light fs-5">
-                      dgt.soporte-master@pjn.gov.ar
-                    </span>
+                    <i className="bi bi-envelope-fill"></i>
+                    <span>dgt.soporte-master@pjn.gov.ar</span>
                   </a>
                 </li>
-                <li>
-                  <span className="text-light fs-5">
-                    Telefono: 4124-4568 / Int: 32681
-                  </span>
+                <li className="contact-phone">
+                  <i className="bi bi-telephone-fill"></i>
+                  <span>4124-4568 / Int: 32681</span>
                 </li>
               </ul>
             </div>
