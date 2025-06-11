@@ -55,7 +55,8 @@
   margin: 0.75rem 0;
 }
 
-.contact-link, .contact-phone {
+.contact-link,
+.contact-phone {
   color: #fff;
   text-decoration: none;
   display: flex;
@@ -80,7 +81,8 @@
     gap: 2rem;
   }
 
-  .contact-link, .contact-phone {
+  .contact-link,
+  .contact-phone {
     justify-content: center;
   }
 }
@@ -3339,4 +3341,5 @@ a:hover .text-light {
 
 .footer-logo-img {
   width: 80px;
-  height: auto
+  height: auto;
+}
