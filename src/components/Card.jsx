@@ -110,7 +110,7 @@ export const Card = ({ imageName, title }) => {
   };
 
   const handleFolderClick = async (item) => {
-    if (item.isDirectory) {
+ if (item.isDirectory || item.name.endsWith(".wim")) {
       setSelectedFolder(item);
       setCurrentPath(item.path);
       const content = await fetchFolderContent(item.path);
