@@ -1,16 +1,21 @@
 .card {
-  width: 16rem;
+  width: 17rem;
+  min-height: 100%; /* Added fixed height */
   margin: var(--spacing-md);
   transition: var(--transition-normal);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-md);
   font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
 }
 
 img {
   background-color: var(--primary-color);
   padding: var(--spacing-md) !important;
   transition: var(--transition-normal);
+  height: 200px; /* Fixed height for images */
+  object-fit: contain;
 }
 
 .card .btn-primary {
@@ -26,10 +31,17 @@ img {
 }
 
 .card-title {
-  font-weight: 600;
+  font-weight: 700; /* Increased weight for more robust appearance */
   margin-bottom: 1rem;
   color: #2c3e50;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  height: 3rem; /* Fixed height for titles */
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2; /* Standard property - limited browser support */
+  -webkit-line-clamp: 2; /* Vendor prefix for WebKit browsers */
+  -webkit-box-orient: vertical;
+  letter-spacing: -0.02em; /* Improved readability */
 }
 
 .btn-primary,
@@ -44,12 +56,12 @@ img {
 }
 
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 img {
@@ -65,12 +77,22 @@ img {
 .card-body {
   padding: 1.5rem;
   background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.card-title {
-  font-weight: 600;
+.card-text {
+  flex: 1;
+  height: 4.5rem; /* Fixed height for description */
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3; /* Standard property */
+  -webkit-line-clamp: 3; /* Vendor prefix for WebKit browsers */
+  -webkit-box-orient: vertical;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  font-weight: 500; /* Added weight for more robust text */
+  letter-spacing: -0.01em; /* Improved readability */
 }
 
 .btn-primary {
@@ -80,6 +102,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s;
+  margin-top: auto;
 }
 
 .btn-primary:hover {
@@ -148,7 +171,7 @@ body.modal-open {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .modal-footer .btn {
     width: 100%;
   }
