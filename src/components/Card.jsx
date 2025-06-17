@@ -12,14 +12,13 @@ export const Card = ({ imageName, title }) => {
   const [nestedFolderContent, setNestedFolderContent] = useState(null);
   const [deepNestedFolder, setDeepNestedFolder] = useState(null);
   const [deepNestedFolderContent, setDeepNestedFolderContent] = useState(null);
-  const [isLoading, setIsLoading] = useState(false); // Nuevo estado para la carga
-  const [currentPath, setCurrentPath] = useState(""); // Para mantener el path actual de navegación
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
 
   const imagePath = (imageName) => {
     return `src/images/${imageName}`;
   };
 
-  // Función para obtener la ruta base y descripción según el título
   const getModalContent = (title) => {
     switch (title) {
       case "Imagenes Master":
@@ -62,15 +61,14 @@ export const Card = ({ imageName, title }) => {
 
   const modalContent = getModalContent(title);
 
-  // Nueva función para obtener el contenido de la carpeta desde el servidor
   const fetchFolderContent = async (path) => {
     setIsLoading(true);
     try {
       const response = await axios.get(`/pyp/${path}`, {
         headers: {
-          'Accept': 'text/html',
-          'Content-Type': 'text/html'
-        }
+          Accept: "text/html",
+          "Content-Type": "text/html",
+        },
       });
 
       const parser = new DOMParser();
@@ -78,7 +76,25 @@ export const Card = ({ imageName, title }) => {
       const links = Array.from(doc.querySelectorAll("a"));
 
       const content = links
-        .filter((link) => link.textContent !== "Parent Directory")
+        .filter((link) => {
+          const text = link.textContent;
+          if (
+            text === "Parent Directory" ||
+            text === "Name" ||
+            text === "Last modified" ||
+            text === "Size" ||
+            text === "Description" ||
+            text.endsWith(".html") ||
+            text.endsWith(".txt")
+          ) {
+            return false;
+          }
+          return (
+            text.endsWith("/") ||
+            text.toLowerCase().endsWith(".wim") ||
+            (title === "Software" && text.toLowerCase().endsWith(".zip"))
+          );
+        })
         .map((link) => {
           const name = link.textContent.replace(/\/$/, "");
           const isDirectory = link.textContent.endsWith("/");
@@ -98,19 +114,23 @@ export const Card = ({ imageName, title }) => {
     } finally {
       setIsLoading(false);
     }
-};
+  };
 
-  // Función para manejar la apertura del modal y la carga inicial
   const handleOpenModal = async () => {
     setShowModal(true);
     setCurrentPath(modalContent.path);
     const initialContent = await fetchFolderContent(modalContent.path);
     setSubFolderContent(initialContent);
-    setSelectedFolder({ name: title, path: modalContent.path }); // Establecer la carpeta inicial como seleccionada
+    setSelectedFolder({ name: title, path: modalContent.path });
   };
 
   const handleFolderClick = async (item) => {
- if (item.isDirectory || (item.file && item.file.toLowerCase().endsWith(".wim"))) {
+    if (
+      item.isDirectory ||
+      (item.name &&
+        (item.name.toLowerCase().endsWith(".wim") ||
+          (title === "Software" && item.name.toLowerCase().endsWith(".zip"))))
+    ) {
       setSelectedFolder(item);
       setCurrentPath(item.path);
       const content = await fetchFolderContent(item.path);
@@ -120,7 +140,6 @@ export const Card = ({ imageName, title }) => {
       setDeepNestedFolder(null);
       setDeepNestedFolderContent(null);
     } else {
-      // Si es un archivo, abrirlo directamente
       window.open(`http://5.0.32.75/pyp/${item.path}`, "_blank");
     }
   };
@@ -162,9 +181,6 @@ export const Card = ({ imageName, title }) => {
       setDeepNestedFolderContent(null);
       setCurrentPath(parentPath);
       const content = await fetchFolderContent(parentPath);
-      // Necesitamos determinar a qué nivel volver para establecer el estado correcto
-      // Esto es un poco más complejo y podría requerir un stack de rutas visitadas
-      // Por ahora, asumimos que volvemos al nivel anterior de nestedFolder o selectedFolder
       if (nestedFolder) {
         setNestedFolderContent(content);
       } else if (selectedFolder) {
@@ -183,9 +199,20 @@ export const Card = ({ imageName, title }) => {
         setSubFolderContent(content);
       }
     } else if (selectedFolder) {
-      setSelectedFolder(null);
-      setSubFolderContent(null);
-      setCurrentPath(modalContent.path);
+      if (currentPath === modalContent.path) {
+        setShowModal(false);
+        setSelectedFolder(null);
+        setSubFolderContent(null);
+        setNestedFolder(null);
+        setNestedFolderContent(null);
+        setDeepNestedFolder(null);
+        setDeepNestedFolderContent(null);
+        setCurrentPath("");
+      } else {
+        setSelectedFolder(null);
+        setSubFolderContent(null);
+        setCurrentPath(modalContent.path);
+      }
     }
   };
 
@@ -200,16 +227,12 @@ export const Card = ({ imageName, title }) => {
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{modalContent.description}</p>
-          <button
-            className="btn btn-primary"
-            onClick={handleOpenModal} // Cambiado para usar la nueva función
-          >
+          <button className="btn btn-primary" onClick={handleOpenModal}>
             Ver Contenido
           </button>
         </div>
       </div>
 
-      {/* Modal */}
       <div
         className={`modal fade ${showModal ? "show" : ""}`}
         style={{ display: showModal ? "block" : "none" }}
@@ -218,17 +241,7 @@ export const Card = ({ imageName, title }) => {
         <div className="modal-dialog modal-xl">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">
-                {deepNestedFolder
-                  ? `${title} - ${deepNestedFolder.name}`
-                  : nestedFolder
-                  ? `${title} - ${nestedFolder.name}`
-                  : selectedFolder
-                  ? `${title} - ${selectedFolder.name}`
-                  : title}
-              </h5>
-              {/* Agregar esta línea para mostrar la ruta actual */}
-              <div className="current-path">Ruta actual: {currentPath}</div>
+              <h5 className="modal-title">{title}</h5>
               <button
                 type="button"
                 className="btn-close"
@@ -275,7 +288,6 @@ export const Card = ({ imageName, title }) => {
                     </div>
                   </div>
                 ) : (
-                  // Renderizado dinámico del contenido
                   (
                     deepNestedFolderContent ||
                     nestedFolderContent ||
@@ -324,6 +336,14 @@ export const Card = ({ imageName, title }) => {
               </div>
             </div>
             <div className="modal-footer">
+              <a
+                href="http://5.0.32.75/pyp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                Otros directorios
+              </a>
               <button
                 type="button"
                 className="btn btn-secondary"
